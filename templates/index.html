@@ -1,102 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Database Search</title>
+    <title>Home</title>
     <style>
-body {
+        body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        h2 {
-            color: #333;
-        }
-
-        form {
-            margin-bottom: 20px;
+        .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
+        h1 {
+            color: #333;
         }
 
-        input {
-            padding: 10px;
-            width: 200px;
+        h2 {
+            color: #555;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 18px;
             margin-bottom: 10px;
         }
 
-        button {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #4caf50;
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout-button {
+            background-color: #dc3545;
             color: #fff;
             border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
             border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .logout-button:hover {
+            background-color: #c82333;
         }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 12px;
-        }
-
-        th {
-            background-color: #4caf50;
-            color: #fff;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .empty-favorites {
+            color: #777;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-
-    <h2>Film Database Search</h2>
-
-    <form action="/search" method="post">
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search_term" placeholder="Enter search term">
-        <button type="submit">Search</button>
-    </form>
-
-    {% if results %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Film ID</th>
-                    <th>Title</th>
-                    <th>Director</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in results %}
-                    <tr>
-                        {% for cell in row %}
-                            <td>{{ cell }}</td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
-
+    <h1>Welcome to the Movie App!</h1>
+    <nav>
+        <a href="/films">View Movies</a> |
+        <a href="/login">Login</a> |
+        <a href="/register">Register</a>
+    </nav>
 </body>
 </html>
